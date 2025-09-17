@@ -2,7 +2,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const speciesParam = urlParams.get('species');
 if (speciesParam) {
-    fetch(`https://raw.githubusercontent.com/Mine11115/dndInfo/main/Species/${speciesParam}.json`)
+    fetch(`https://raw.githubusercontent.com/Mine1115/dndInfo/refs/heads/main/Species/${speciesParam}.json`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -12,7 +12,7 @@ if (speciesParam) {
         .then(data => {
             // Process the species data
             console.log(data);
-            fetch(`https://raw.githubusercontent.com/Mine11115/dndInfo/main/Species/${speciesParam}.md`)
+            fetch(`https://raw.githubusercontent.com/Mine1115/dndInfo/refs/heads/main/Species/${speciesParam}.md`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -32,7 +32,7 @@ if (speciesParam) {
         });
 } else {
     // Fetch the species list
-    fetch('https://raw.githubusercontent.com/Mine11115/dndInfo/main/Species/list.txt')
+    fetch('https://raw.githubusercontent.com/Mine1115/dndInfo/refs/heads/main/Species/list.txt')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
