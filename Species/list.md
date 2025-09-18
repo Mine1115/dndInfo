@@ -1,0 +1,1 @@
+**Catfolk:** Agile and stealthy, Catfolk are known for their feline agility and keen senses.

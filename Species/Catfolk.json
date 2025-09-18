@@ -8,8 +8,16 @@
     "ability": ["Cat’s Luck", "Land Upright", "Nimble Climber"],
     "Languages": ["Common", "Catfolk"],
     "Darkvision": true,
-    "Darkvisiondescription": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.",
-    "Subraces": ["Jungle-born", "Savannah-born", "City-born"],
-    "Source": "The Dragon’s Hoard",
+    "DarkvisionRange": 60,
+    "Subraces": {"Jungle-born": {
+
+                }, 
+                "Savannah-born": {
+
+                }, 
+                "City-born": {
+
+                }},
+    "Source": "Legendary Games",
     "Copyright": "The Dragon’s Hoard #1 © 2022, Legendary Games; Authors Jason Nelson, Miguel Colon, Alex Riggs, Mike Myler, Robert J. Grady, Michael “solomani” Mifsud, Darrin Drader, Matt Kimmel, Scott D. Young."
 }

@@ -32,8 +32,6 @@ if (speciesParam) {
     .then(([jsonData, mdText]) => {
         const speciesData = jsonData;
         const speciesMarkdown = mdText || '';
-        console.log('species JSON', speciesData);
-        console.log('species MD length', speciesMarkdown.length);
 
         // normalize fields with common alternatives and typos
         const size = getAny(speciesData, ['size', 'Size']) || 'Unknown';
@@ -108,19 +106,33 @@ if (speciesParam) {
             markdownHtml = `<pre>${escaped}</pre>`;
         }
 
+        if (speciesData.Copyright) {
+            const copyrightDiv = document.createElement('div');
+            copyrightDiv.textContent = speciesData.Copyright;
+            speciesDiv.appendChild(copyrightDiv);
+        }
+
+        let dvRange = '';
+        let dvDesc = '';
+
+        if (speciesData.Darkvision) {
+            dvRange = `<div>Darkvision Range<br>${speciesData.DarkvisionRange}</div>`;
+            dvDesc = `You can see in dim light within ${speciesData.DarkvisionRange} feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.`;
+        }
+
         speciesDiv.innerHTML = `
             <h1>${speciesParam}</h1>
             <div class="species-details">
-                <div>Size: ${size}</div>
-                <div>Speed: ${speedDisplay}</div>
-                <div>Ability Score Increase: ${abilityScoreIncrease}</div>
-                <div>Languages: ${languagesText}</div>
-                <div>Traits: ${traitsText}</div>
-                <div>Proficiencies: ${profText}</div>
-                <div>Subraces: ${subracesText}</div>
+                <div>Size<br>${size}</div>
+                <div>Speed<br>${speedDisplay}</div>
+                <div>Ability Score Increase<br>${abilityScoreIncrease}</div>
+                <div>Languages<br>${languagesText}</div>
+                <div>Traits<br>${traitsText}</div>
+                <div>Proficiencies<br>${profText}</div>
             </div>
             <div class="species-markdown">${markdownHtml}</div>
             <div><h2>Subraces</h2><ul></ul></div>
+            <div>Subraces<br>${subracesText}</div>
         `;
     })
     .catch(error => {
@@ -131,7 +143,7 @@ if (speciesParam) {
     });
 } else {
     // Fetch the species list
-    fetch('https://raw.githubusercontent.com/Mine1115/dndInfo/refs/heads/main/Species/list.txt')
+    fetch('https://raw.githubusercontent.com/Mine1115/dndInfo/refs/heads/main/Species/list.md')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -140,7 +152,44 @@ if (speciesParam) {
         })
         .then(data => {
             // Process the species list
-            console.log(data);
+            const speciesList = data.split('\n').map(line => line.trim()).filter(line => line);
+            const itemList = document.getElementById('itemList');
+            if (itemList) {
+                itemList.innerHTML = '';
+                speciesList.forEach(species => {
+                    const li = document.createElement('li');
+                    const link = document.createElement('a');
+                    link.href = `species.html?species=${encodeURIComponent(species.split("**")[1].split(":")[0].trim())}`;
+                    try {
+                        if (typeof marked !== 'undefined') {
+                            const rawHtml = marked.parse ? marked.parse(species) : marked(species);
+                            if (typeof DOMPurify !== 'undefined' && DOMPurify.sanitize) {
+                                markdownHtml = DOMPurify.sanitize(rawHtml);
+                            } else {
+                                // No sanitizer available, use raw HTML but this is unsafe if content is untrusted
+                                markdownHtml = rawHtml;
+                            }
+                        } else {
+                            // marked not available — escape HTML and wrap in <pre> for readability
+                            const escaped = speciesMarkdown
+                                .replace(/&/g, '&amp;')
+                                .replace(/</g, '&lt;')
+                                .replace(/>/g, '&gt;');
+                            markdownHtml = `<pre>${escaped}</pre>`;
+                        }
+                    } catch (e) {
+                        console.error('Markdown conversion failed', e);
+                        const escaped = speciesMarkdown
+                            .replace(/&/g, '&amp;')
+                            .replace(/</g, '&lt;')
+                            .replace(/>/g, '&gt;');
+                        markdownHtml = `<pre>${escaped}</pre>`;
+                    }
+                    link.innerHTML = markdownHtml;
+                    li.appendChild(link);
+                    itemList.appendChild(li);
+                });
+            }
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);

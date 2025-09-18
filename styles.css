@@ -1,0 +1,19 @@
+body {
+    font-family: Ubuntu, Arial, sans-serif;
+    background-color: #fcfdc8;
+}
+
+.species-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.species-details div {
+    background-color: gray;
+    padding: 10px;
+    border-radius: 5px;
+    flex: 1 1 200px;
+    text-align: center;
+    width: 80px;
+}

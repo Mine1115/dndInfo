@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Legal Information</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="Title">Legal Information</h1>
+    </header>
+    <main>
+        <table>
+            <tr>
+                <td><a href="classes.html">Classes</a></td>
+                <td><a href="species.html">Species</a></td>
+                <td><a href="spells.html">Spells</a></td>
+                <td><a href="items.html">Items</a></td>
+            </tr>
+        </table>
+        <section>
+            <h2>Open Game License v1.0a</h2>
+            <p>The following text is the Open Game License v1.0a, which is used under the terms of the license.</p>
+            <pre>
+                <p id="OGLText"></p>
+            </pre>
+        </section>
+    </main>
+    <script>
+        fetch('https://raw.githubusercontent.com/Mine1115/dndInfo/refs/heads/main/LICENSE')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('OGLText').textContent = data;
+            })
+            .catch(error => console.error('Error loading OGL text:', error));
+    </script>
+    <footer>
+        <a href="legal-information.html">Legal Information</a>
+    </footer>
+</body>
+</html>
