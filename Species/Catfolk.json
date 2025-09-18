@@ -9,18 +9,21 @@
     "Languages": ["Common", "Catfolk"],
     "Darkvision": true,
     "DarkvisionRange": 60,
-    "Subraces": {"Jungle-born": {
+    "Subraces": [{
+                    "name": "Jungle-born",
                     "Abilities": ["Cat's Claws", "Jungle Stride"],
                     "description": "The Jungle-born catfolk excel at stealth and subterfuge and are at home in the giant trees which make up their preferred home. Those who have left their homeland to go adventuring are often loners, unwilling to depend on other races for support. They tend towards chaotic alignments compared to other catfolk."
-                }, 
-                "Savannah-born": {
+                },
+                {
+                    "name": "Savannah-born",
                     "Abilities": ["Keen Smell", "Surprising Charge"],
                     "description": "Savannah-born catfolk inherit the traits of the large feline predators of the endless plains. They are social and community-minded and work together with a spirit of unselfish cooperation. They tend more toward lawful alignments than other catfolk."
-                }, 
-                "City-born": {
+                },
+                {
+                    "name": "City-born",
                     "Abilities": ["Clever Cat", "Curiosity"],
                     "description": "Although the catfolk race originates from more natural surroundings, many have lived in large cities for so long that they have formed effectively their own subrace. Often driven by curiosity, city-born catfolk are at home in the twisting back alleys and rooftops of a large city."
-                }},
+                }],
     "Source": "Legendary Games",
     "Copyright": "The Dragon’s Hoard #1 © 2022, Legendary Games; Authors Jason Nelson, Miguel Colon, Alex Riggs, Mike Myler, Robert J. Grady, Michael “solomani” Mifsud, Darrin Drader, Matt Kimmel, Scott D. Young."
 }
