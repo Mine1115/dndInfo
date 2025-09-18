@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>Dungeons & Dragons Items</h1>
+        <h1 id="Title">Dungeons & Dragons Species</h1>
     </header>
     <main>
         <table>
@@ -21,12 +21,15 @@
             </tr>
         </table>
         <section>
-            <h2>Species</h2>
-            <ul>
+            <input type="text" id="searchInput" placeholder="Search species..." onkeyup="filterSpecies()">
+            <ul id="itemList">
                 <li><a href="species.html?species=Catfolk"><strong>Catfolk:</strong> Agile and stealthy, Catfolk are known for their feline agility and keen senses.</a></li>
             </ul>
         </section>
     </main>
     <script src="search.js"></script>
+    <!-- Marked (markdown parser) and DOMPurify (sanitizer) from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
     <script src="species.js"></script>
 </html>
