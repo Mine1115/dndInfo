@@ -20,6 +20,9 @@ function asArray(val) {
     return [val];
 }
 
+const copyright = document.createElement('footer');
+copyright.innerHTML = '<a href="legal-information.html">Legal Information</a>';
+
 if (speciesParam) {
     const jsonUrl = `https://raw.githubusercontent.com/Mine1115/dndInfo/refs/heads/main/Species/${speciesParam}.json`;
     const mdUrl = `https://raw.githubusercontent.com/Mine1115/dndInfo/refs/heads/main/Species/${speciesParam}.md`;
@@ -52,7 +55,7 @@ if (speciesParam) {
         const traits = asArray(getAny(speciesData, ['traits', 'ability', 'Ability']));
         const proficiencies = asArray(getAny(speciesData, ['proficiencies', 'Proficiencies', 'proficentys', 'proficiencys']));
         const subraces = asArray(getAny(speciesData, ['subraces', 'Subraces', 'Subrace', 'Subraces']));
-        const abilityScoreIncrease = getAny(speciesData, ['abilityScoreIncrease', 'AbilityScoreIncrease', 'ability_score_increase']) || '';
+        // const abilityScoreIncrease = getAny(speciesData, ['abilityScoreIncrease', 'AbilityScoreIncrease', 'ability_score_increase']) || '';
 
         // Update page elements
         document.title = speciesParam;
@@ -76,7 +79,18 @@ if (speciesParam) {
         const languagesText = languages.length ? languages.join(', ') : 'None';
         const traitsText = traits.length ? traits.join(', ') : 'None';
         const profText = proficiencies.length ? proficiencies.join(', ') : 'None';
-        const subracesText = subraces.length ? subraces.join(', ') : 'None';
+        let subracesText = '';
+
+        if (subraces.length > 0) {
+            subracesText = '<H2>Subraces</H2><div class="subraces-container">';
+            let Abilities = '';
+            
+            for (let subrace of subraces) {
+                Abilities = `<p>Abilities: ${asArray(getAny(subrace, ['Abilities'])).join(', ')}</p>`;
+                subracesText += `<div><h4>${subrace.name}</h4>${Abilities}<p>${asArray(getAny(subrace, ['description']))}</p></div>`;
+            }
+            subracesText += '</div>';
+        }
 
         // Convert markdown to HTML if possible, sanitize the result
         let markdownHtml = '';
@@ -116,7 +130,7 @@ if (speciesParam) {
         let dvDesc = '';
 
         if (speciesData.Darkvision) {
-            dvRange = `<div>Darkvision Range<br>${speciesData.DarkvisionRange}</div>`;
+            dvRange = `<div>Darkvision Range<br>${speciesData.DarkvisionRange} ft.</div>`;
             dvDesc = `You can see in dim light within ${speciesData.DarkvisionRange} feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.`;
         }
 
@@ -125,22 +139,27 @@ if (speciesParam) {
             <div class="species-details">
                 <div>Size<br>${size}</div>
                 <div>Speed<br>${speedDisplay}</div>
-                <div>Ability Score Increase<br>${abilityScoreIncrease}</div>
                 <div>Languages<br>${languagesText}</div>
                 <div>Traits<br>${traitsText}</div>
                 <div>Proficiencies<br>${profText}</div>
+                ${dvRange}
             </div>
             <div class="species-markdown">${markdownHtml}</div>
-            <div><h2>Subraces</h2><ul></ul></div>
-            <div>Subraces<br>${subracesText}</div>
+            ${subracesText}
+            <h4>Copyright</h4>
+            <div>${speciesData.Copyright || 'No copyright information available.'}</div>
         `;
+    document.body.appendChild(copyright);
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
         const err = document.createElement('div');
         err.textContent = 'Failed to load species data.';
         document.body.appendChild(err);
+    document.body.appendChild(copyright);
     });
+    
+    
 } else {
     // Fetch the species list
     fetch('https://raw.githubusercontent.com/Mine1115/dndInfo/refs/heads/main/Species/list.md')
@@ -190,8 +209,10 @@ if (speciesParam) {
                     itemList.appendChild(li);
                 });
             }
+        document.body.appendChild(copyright);
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
+        document.body.appendChild(copyright);
         });
 }

@@ -5,15 +5,32 @@ body {
 
 .species-details {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 20px;
+    justify-content: space-around;
 }
 .species-details div {
-    background-color: gray;
+    background-color: #f3f592;
     padding: 10px;
     border-radius: 5px;
     flex: 1 1 200px;
     text-align: center;
     width: 80px;
+}
+.subraces-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+.subraces-container div {
+    background-color: #f3f592;
+    padding: 10px;
+    border-radius: 5px;
+    flex: 1 1 200px;
+    text-align: center;
+    width: 300px;
 }
