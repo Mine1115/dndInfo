@@ -166,7 +166,7 @@ if (speciesParam) {
     
 } else {
     // Fetch the species list
-    fetch('/Species/list.md')
+    fetch('https://raw.githubusercontent.com/Mine1115/dndInfo/refs/heads/main/Species/list.md')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
