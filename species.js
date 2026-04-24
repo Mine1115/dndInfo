@@ -29,8 +29,8 @@ DOMPurify.addHook('afterSanitizeAttributes', function(node) {
 
 
 if (speciesParam) {
-    const jsonUrl = `/Species/${speciesParam}.json`;
-    const mdUrl = `/Species/${speciesParam}.md`;
+    const jsonUrl = `https://raw.githubusercontent.com/Mine1115/dndInfo/refs/heads/main/Species/${speciesParam}.json`;
+    const mdUrl = `https://raw.githubusercontent.com/Mine1115/dndInfo/refs/heads/main/Species/${speciesParam}.md`;
 
     
     Promise.all([
