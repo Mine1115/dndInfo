@@ -1,24 +1,52 @@
-Catfolk, also known as jaskirri, are a race of natural explorers who rarely tire of trailblazing, but such trailblazing is not limited merely to the search for new horizons in distant lands. Many catfolk see personal growth and development as equally valid avenues of exploration. While most catfolk are nimble, capable, and often active creatures, there is also a strong tendency among some catfolk to engage in quiet contemplation and study. Such individuals are interested in finding new solutions to age-old problems and questioning even the most steadfast philosophical certainties of the day. They are curious by nature, and catfolk culture never discourages inquisitiveness, but rather fosters and encourages it. Many are seen as quirky extroverts by members of other races, but within catfolk tribes there is no shame attached to minor peculiarities, eccentricities, or foolhardiness. All but the most inwardly focused catfolk enjoy being the center of attention, but not at the expense of their tribe, whether it’s the one the catfolk are born into or the tribe they choose through the bonds of friendship with other creatures. catfolk tend to be both generous and loyal to their family and friends.
+Catfolk are a social and active people of natural grace and obsessive curiosity, resembling bipedal, feline humanoids with tails, cat-like ears, and fur. They are equally comfortable wandering in far-off regions, wallowing in the heart of the largest cities, or delving into the lairs of forgotten horrors. Most catfolk dwell in deserts and endless plains, but love of travel and new experiences often draw catfolk to distant realms.
 
-## Physical Description
-In general, catfolk are lithe and slender, standing midway between dwarves and humans in stature. While clearly humanoid, they possess many feline features, including a coat of soft fine fur, slit pupils, and a sleek, slender tail. Their ears are pointed, but unlike those of elves, are more rounded and catlike.
+There are whispers of hidden catfolk communities in the deepest jungles or even far to the north in the frozen tundra.
 
-They manipulate objects as easily as any other humanoid, but their fingers terminate in small, sharp, retractable claws. These claws are typically not powerful enough to be used as weapons, but some members of the species—either by quirk of birth or from years of honing—can use them with deadly effect. Feline whiskers are not uncommon, but not universal, and hair and eye color vary greatly.
+## Curiosity and Community
+Catfolk are nimble, curious, and adventurous creatures who seek out life rather than wait for it to come to them. Some outsiders believe heedless self-expression alone drives the catfolk. As proof, they point to catfolk fascination with new experiences or quests for heroic glory. Those who make this claim miss the catfolk’s inner strength. Catfolk are optimistic, quirky, sometimes extravagant extroverts who overindulge their own curiosity or motivations. They are a race of extremes.
 
-## Society 
-While selfexpression is an important aspect of catfolk culture, it is mitigated by a strong sense of community and group effort. In the wild, catfolk are a hunter-gatherer tribal people. The pursuit of personal power never comes before the health and well-being of the tribe. More than one race has underestimated this seemingly gentle people only to discover much too late that their cohesion also provides them great strength.
+Some catfolk are playful and seemingly irresponsible while others possess unwavering focus and a hunter’s mentality. Many catfolk float between these two viewpoints as the situation—or their mood—dictates. All but the most introverted catfolk enjoy holding the attention of others, but never to the detriment of their friends or family.
 
-Catfolk prefer to be led by their most competent members, usually a council of sub-chieftains chosen by their peers, either though consensus or election. The subchiefs then choose a chieftain to lead in times of danger and to mediate disputes among the sub-chiefs. The chieftain is the most capable member of the tribe and is often magically talented. catfolk who settle in more urban and civilized areas still cling to a similar tribal structure, but often see friends outside the tribe, even those from other races, as part of their extended tribe. Within adventuring groups, catfolk who do not consider themselves the obvious choice as chieftain often defer to the person who most resembles their cultural ideal of a chieftain.
+Harkening back to their ancestors’ packs and prides, friends, relations, and community hold a special place in the hearts of most catfolk.
 
-## Relations 
-Adaptable and curious, catfolk get along with almost any race that extends reciprocal goodwill. They acclimate easily to halflings, humans, and especially elves.
+Because catfolk are a largely matriarchal people, females hold most positions of leadership and power, but competence usually supersedes gender. Catfolk living in mixed communities and cities largely integrate into the overall society.
 
-Catfolk and elves share a passionate nature, as well as a love of music, dance, and storytelling; elven communities often gently mentor catfolk tribes, though such elves are careful not to act in a patronizing manner toward their feline friends. Gnomes make natural companions for catfolk, as catfolk enjoy gnomes’ strange and obsessive qualities.
+## Other Races
+Catfolk get along well with anyone who respects them and accepts their curiosity. They easily accept humans and delight in halflings when they encounter them.
 
-Catfolk are tolerant of kobolds as long as the reptilian beings respect the catfolk’s boundaries. The feral nature of orcs stirs as much puzzlement as it does revulsion among catfolk, as they don’t understand orcs’ savagery and propensity for self-destruction. Half-orcs, on the other hand, intrigue catfolk, especially those half-orcs who strive to excel beyond the deleterious and hateful nature of their savage kin. catfolk often view goblins and ratfolk as vermin, as they disdain the swarming and pernicious tendencies of those races.
+Passionate, art-loving elves and boisterous dwarves find common ground with catfolk, while those too bogged down in laws, tradition, and “rules” often find them aggravating. Kobolds and catfolk naturally intrigue each other, though catfolk do not always get along with draconic creatures.
 
-## Alignment and Religion 
-With community and unselfish cooperation at the center of their culture, as well as a goodnatured curiosity and willingness to adapt to the customs of many other races, most catfolk tend toward good alignments. The clear majority of catfolk are also chaotic, as wisdom is not their strongest virtue; nevertheless, there are exceptions with cause.
+## Catfolk Adventurers
+Many catfolk take up the adventurer’s trade, as it provides an excuse to indulge in their natural curiosity or their glory hunting. Some take up the rogue’s path or find employment as a scout or ranger. Still others pledge themselves as paladins to mischievous or travel-focused deities. The catfolk’s physical abilities and cultural outlook allows them to fill almost any role.
 
-## Adventurers 
-Natural born trackers, the huntergatherer aspect of their tribes pushes many catfolk toward occupations as rangers and druids by default, but such roles don’t always speak to their love of performance art, be it song, dance, or storytelling. Catfolk legends also speak of a rich tradition of great sorcerer heroes. Those catfolk who internalize their wanderlust often become wizards and monks, with many of those monks taking the path of the nimble guardian. While catfolk cavaliers and inquisitors are rare (steadfast dedication to a cause is often alien to the catfolk mindset) individuals who choose these paths are never looked down upon. catfolk understand that exploration and self-knowledge can lead down many roads and are accepting of nearly all professions and ways of life.
+## Catfolk Eccentricity
+A catfolk’s personality can be flighty, flitting from obsession to obsession, or as constant as the world itself. You can use some of the ideas in the Catfolk Eccentricity table to customize your character in addition to the elements of the background you chose.
+
+## Catfolk Eccentricity
+|d10|Eccentricity|
+|--|-------------|
+|1|You constantly compare everyone’s actions to catfolk heroes of the past.|
+|2|You keep a long list of places you want to go or things you want to do.|
+|3|You must defeat a certain foe to fulfill your oath and reap the glory.|
+|4|You find it amusing to act more bestial because it makes others nervous.|
+|5|You are writing a song about your exploits.|
+|6|You never like returning to a place you’ve already been.|
+|7|Your weapons have names and you speak to them like siblings or lovers.|
+|8|You tend to play with small objects.|
+|9|You growl and show your teeth when things get tense.|
+|10|You can’t help talking to strangers—the stranger the better|
+
+## Catfolk Racial Traits
+Your catfolk character has the following traits.
+
+Ability Score Increase. Your Dexterity score increases by 2.
+
+Age. Catfolk mature at the same rate as humans and can live just past a century.
+
+Alignment. Catfolk tend toward two extremes. Some are free-spirited and chaotic, letting impulse and fancy guide their decisions. Others are devoted to duty and personal honor. Typically, catfolk deem concepts such as good and evil as less important than freedom or their oaths.
+
+Size. Catfolk have a similar stature to humans but are generally leaner and more muscular. Your size is Medium.
+
+Cat’s Claws. Your sharp claws can cut with ease. Your claws are natural melee weapons, which you can use to make unarmed strikes. When you hit with a claw, your claw deals slashing damage equal to 1d4 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike.
+
+Hunter’s Senses. You have proficiency in the Perception and Stealth skills.

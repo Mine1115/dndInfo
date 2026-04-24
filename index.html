@@ -18,9 +18,17 @@
                 <td><a href="classes.html">Classes</a></td>
                 <td><a href="species.html">Species</a></td>
                 <td><a href="spells.html">Spells</a></td>
-                <td><a href="items.html">Items</a></td>
             </tr>
         </table>
+        <div id="latest-push" style="background-color:#f3f592; border-radius: 25px; padding: 10px;"></div>
+        <script>
+            fetch('https://api.github.com/repos/Mine1115/dndInfo/commits?sha=main')
+            .then(response => response.json())
+            .then(data => {const latestCommit = data[0]; 
+                document.getElementById('latest-push').innerHTML = ` <p><strong>Commit Message:</strong> ${latestCommit.commit.message}</p> <p><strong>Author:</strong> ${latestCommit.commit.author.name}</p> <p><strong>Date:</strong> ${latestCommit.commit.author.date}</p> <p><strong>URL:</strong> <a href="${latestCommit.html_url}">${latestCommit.html_url}</a></p> `;
+            })
+            .catch(error => console.error('Error:', error));
+        </script>
     </main>
     <footer>
         <a href="legal-information.html">Legal Information</a>

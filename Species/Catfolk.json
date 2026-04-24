@@ -4,26 +4,21 @@
     "Speed": {
         "walk": 30
     },
-    "proficentys": ["Stealth", "Perception"],
-    "ability": ["Cat’s Luck", "Land Upright", "Nimble Climber"],
-    "Languages": ["Common", "Catfolk"],
+    "proficentys": ["Perception", "Stealth"],
+    "ability": ["Hunter’s Senses", "Cat’s Claws", "Hunter’s Senses"],
+    "Languages": ["Common"],
     "Darkvision": true,
     "DarkvisionRange": 60,
     "Subraces": [{
-                    "name": "Jungle-born",
-                    "Abilities": ["Cat's Claws", "Jungle Stride"],
-                    "description": "The Jungle-born catfolk excel at stealth and subterfuge and are at home in the giant trees which make up their preferred home. Those who have left their homeland to go adventuring are often loners, unwilling to depend on other races for support. They tend towards chaotic alignments compared to other catfolk."
+                    "name": "Malkin",
+                    "Abilities": ["Curiously Clever", "Charmed Curiosity"],
+                    "description": "It’s often said curiosity killed the cat, and this applies with equal frequency to catfolk. As a malkin catfolk you are adept at finding clever solutions to escape difficult situations, even (or perhaps especially) situations of your own making. Your diminutive size also gives you an uncanny nimbleness that helps you avoid the worst consequences of your intense inquisitiveness. Most often found in densely populated regions, these catfolk are as curious about the comings and goings of other humanoids as they are about natural or magical phenomena and artifacts. While malkins are sometimes referred to as “housecats” by other humanoids and even by other catfolk, doing so in a malkin’s hearing is a surefire way to get a face full of claws. . . .<br><strong>Ability Score Increase:</strong> Your Intelligence score increases by 1<br><strong>Size:</strong> Malkins are between 3 and 4 feet tall and average about 50 pounds. Your size is Small rather than Medium.<br><strong>Curiously Clever:</strong> You have proficiency in the Investigation skill.<br><strong>Charmed Curiosity:</strong> When you roll a 1 on the d20 for a Dexterity check or saving throw, you can reroll the die and must use the new roll."
                 },
                 {
-                    "name": "Savannah-born",
-                    "Abilities": ["Keen Smell", "Surprising Charge"],
-                    "description": "Savannah-born catfolk inherit the traits of the large feline predators of the endless plains. They are social and community-minded and work together with a spirit of unselfish cooperation. They tend more toward lawful alignments than other catfolk."
-                },
-                {
-                    "name": "City-born",
-                    "Abilities": ["Clever Cat", "Curiosity"],
-                    "description": "Although the catfolk race originates from more natural surroundings, many have lived in large cities for so long that they have formed effectively their own subrace. Often driven by curiosity, city-born catfolk are at home in the twisting back alleys and rooftops of a large city."
+                    "name": "Pantheran",
+                    "Abilities": ["Hunter’s Charge", "One With the Wilds"],
+                    "description": "Pantheran catfolk are a wise, observant, and patient people who pride themselves on being resourceful and self-sufficient. Less social than many others of their kind, these catfolk typically dwell in small, close-knit family groups in the forests, jungles, and grasslands of the world, away from larger population centers or cities. Their family clans teach the importance of living off of and protecting the natural world, and pantherans act swiftly and mercilessly when their forest homes are threatened by outside forces. Conversely, pantherans can be the most fierce and loyal of neighbors to villages who respect nature and who take from the land and forest no more than they need. As a pantheran, you value nature and kinship, and your allies know they can count on your wisdom and, when necessary, your claws.<br><strong>Ability Score Increase:</strong> Your Wisdom score increases by 1<br><strong>Hunter’s Charge:</strong> Once per turn, if you move at least 10 feet toward a target and hit it with a melee weapon attack in the same turn, you can use a bonus action to attack that creature with your Cat’s Claws. You can use this trait a number of times per day equal to your proficiency bonus, and you regain all expended uses when you finish a long rest<br><strong>One With the Wilds:</strong> You have proficiency in one of the following skills of your choice: Insight, Medicine, Nature, or Survival"
                 }],
-    "Source": "Legendary Games",
-    "Copyright": "The Dragon’s Hoard #1 © 2022, Legendary Games; Authors Jason Nelson, Miguel Colon, Alex Riggs, Mike Myler, Robert J. Grady, Michael “solomani” Mifsud, Darrin Drader, Matt Kimmel, Scott D. Young."
+    "Source": "Tome of Heroes",
+    "Copyright": "©2022 Open Design LLC; Authors: Celeste Conowitch, Jeff Lee, Sarah Madsen, Ben McFarland, Kelly Pawlik, Brian Suskind"
 }

@@ -1,1 +1,1 @@
-**Catfolk:** Agile and stealthy, Catfolk are known for their feline agility and keen senses.
+**Catfolk:** social and active people of natural grace and obsessive curiosity, resembling bipedal, feline humanoids with tails, cat-like ears, and fur.

@@ -1,8 +1,6 @@
-// code to fetch species data from the github repository if there is a variable in the url else fetch species list
 const urlParams = new URLSearchParams(window.location.search);
 const speciesParam = urlParams.get('species');
 
-// Helper: find a field by trying multiple possible names and case-insensitive keys
 function getAny(obj, names) {
     if (!obj) return undefined;
     for (const name of names) {
@@ -23,11 +21,18 @@ function asArray(val) {
 const copyright = document.createElement('footer');
 copyright.innerHTML = '<a href="legal-information.html">Legal Information</a>';
 
-if (speciesParam) {
-    const jsonUrl = `https://raw.githubusercontent.com/Mine1115/dndInfo/refs/heads/main/Species/${speciesParam}.json`;
-    const mdUrl = `https://raw.githubusercontent.com/Mine1115/dndInfo/refs/heads/main/Species/${speciesParam}.md`;
+DOMPurify.addHook('afterSanitizeAttributes', function(node) {
+    if (node.tagName === 'TABLE') {
+        node.setAttribute('class', 'Markdowntable');
+    }
+});
 
-    // Fetch both resources in parallel; allow markdown to be empty if missing
+
+if (speciesParam) {
+    const jsonUrl = `/Species/${speciesParam}.json`;
+    const mdUrl = `/Species/${speciesParam}.md`;
+
+    
     Promise.all([
         fetch(jsonUrl).then(r => { if (!r.ok) throw new Error('JSON fetch failed'); return r.json(); }),
         fetch(mdUrl).then(r => r.ok ? r.text() : '')
@@ -36,9 +41,7 @@ if (speciesParam) {
         const speciesData = jsonData;
         const speciesMarkdown = mdText || '';
 
-        // normalize fields with common alternatives and typos
         const size = getAny(speciesData, ['size', 'Size']) || 'Unknown';
-        // speed may be an object like { walk: 30 }
         const rawSpeed = getAny(speciesData, ['speed', 'Speed']) || {};
         let speedDisplay = '';
         if (typeof rawSpeed === 'object' && rawSpeed !== null) {
@@ -57,7 +60,7 @@ if (speciesParam) {
         const subraces = asArray(getAny(speciesData, ['subraces', 'Subraces', 'Subrace', 'Subraces']));
         // const abilityScoreIncrease = getAny(speciesData, ['abilityScoreIncrease', 'AbilityScoreIncrease', 'ability_score_increase']) || '';
 
-        // Update page elements
+
         document.title = speciesParam;
         const backLink = document.createElement('a');
         backLink.href = 'species.html';
@@ -75,7 +78,6 @@ if (speciesParam) {
         const titleEl = document.getElementById('Title');
         if (titleEl) titleEl.innerHTML = speciesParam;
 
-        // Safely join arrays only when present
         const languagesText = languages.length ? languages.join(', ') : 'None';
         const traitsText = traits.length ? traits.join(', ') : 'None';
         const profText = proficiencies.length ? proficiencies.join(', ') : 'None';
@@ -92,7 +94,6 @@ if (speciesParam) {
             subracesText += '</div>';
         }
 
-        // Convert markdown to HTML if possible, sanitize the result
         let markdownHtml = '';
         try {
             if (typeof marked !== 'undefined') {
@@ -100,11 +101,9 @@ if (speciesParam) {
                 if (typeof DOMPurify !== 'undefined' && DOMPurify.sanitize) {
                     markdownHtml = DOMPurify.sanitize(rawHtml);
                 } else {
-                    // No sanitizer available, use raw HTML but this is unsafe if content is untrusted
                     markdownHtml = rawHtml;
                 }
             } else {
-                // marked not available — escape HTML and wrap in <pre> for readability
                 const escaped = speciesMarkdown
                     .replace(/&/g, '&amp;')
                     .replace(/</g, '&lt;')
@@ -126,12 +125,17 @@ if (speciesParam) {
             speciesDiv.appendChild(copyrightDiv);
         }
 
-        let dvRange = '';
-        let dvDesc = '';
+        let senses = '';
+        let sensesDesc = '';
 
-        if (speciesData.Darkvision) {
-            dvRange = `<div>Darkvision Range<br>${speciesData.DarkvisionRange} ft.</div>`;
-            dvDesc = `You can see in dim light within ${speciesData.DarkvisionRange} feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.`;
+        if (speciesData.Darkvision || speciesData.Truesight || speciesData.Blindsight) {
+            senses = '<div>Senses and Range<br>';
+            sensesDesc = '';
+            if (speciesData.Darkvision) {
+                senses += `Darkvision: ${speciesData.DarkvisionRange} ft.</div>`;
+                sensesDesc += `You can see in dim light within ${speciesData.DarkvisionRange} feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.`;
+            }
+            senses += "</div>"
         }
 
         speciesDiv.innerHTML = `
@@ -142,11 +146,11 @@ if (speciesParam) {
                 <div>Languages<br>${languagesText}</div>
                 <div>Traits<br>${traitsText}</div>
                 <div>Proficiencies<br>${profText}</div>
-                ${dvRange}
+                ${senses}
             </div>
-            <div class="species-markdown">${markdownHtml}</div>
+            <div class="species-markdown">${markdownHtml}${sensesDesc}</div>
             ${subracesText}
-            <h4>Copyright</h4>
+            <h4>Copyright info</h4>
             <div>${speciesData.Copyright || 'No copyright information available.'}</div>
         `;
     document.body.appendChild(copyright);
@@ -162,7 +166,7 @@ if (speciesParam) {
     
 } else {
     // Fetch the species list
-    fetch('https://raw.githubusercontent.com/Mine1115/dndInfo/refs/heads/main/Species/list.md')
+    fetch('/Species/list.md')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');

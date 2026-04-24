@@ -34,3 +34,30 @@ body {
     text-align: center;
     width: 300px;
 }
+
+table.Markdowntable {
+    border-collapse: separate;
+    border-spacing: 0px;
+}
+
+table.Markdowntable th, table.Markdowntable td {
+    border: 2px solid #EDEAE8;
+    padding: 2px;
+}
+
+table.Markdowntable th {
+    background-color: white;
+    color: black;
+}
+
+table.Markdowntable tbody tr:nth-child(odd) {
+    background-color: #D7E7EE;
+}
+
+table.Markdowntable tbody tr:nth-child(even) {
+    background-color: #F1F7F9;
+}
+
+table.Markdowntable tbody tr:hover {
+    background-color: #B3D2DE;
+}
